@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "TicketDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<strong>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="TicketDetails">Content:</a> 
+</strong>
+@Model.Content
+
+<br />
+
+<strong>
+    Assigned To:
+</strong>
+@Model.AssignedTo.Name
+
+<br />
+

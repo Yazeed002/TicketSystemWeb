@@ -1,0 +1,42 @@
+﻿@model List<SupportTicket>
+
+@{
+    ViewData["Title"] = "SupportTickets";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@foreach (var ticket in Model)
+{
+    <h1>
+        <a asp-controller="Home" asp-action="Ticket Details" asp-route-id="@ticket.Id">
+            @ticket.Content 
+        </a>
+        
+    </h1>
+
+    <div class="row">
+        <div class="col-md-3">
+          <p><b>Assigned To:</b></p>  @ticket.AssignedTo.Name <hr/> <p><b>Requester:</b></p> @ticket.Requester.Name
+        </div>
+
+        <div class="col-md-3">
+            <p><b>Department:</b></p> @ticket.Department.Name
+        </div>
+
+        <div class="col-md-3">
+            <p><b>Status:</b></p> @ticket.Status
+        </div>
+
+        <div class="col-md-3">
+            <p><b>Priority:</b></p> @ticket.Priority.Name
+        </div>
+    </div>
+
+    <hr />
+    <hr />
+    <hr />
+}
+
+
+
